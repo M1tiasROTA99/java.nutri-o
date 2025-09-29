@@ -1,8 +1,8 @@
 //muda o nome a partir do seletor de classe
 var subtitulo = document.querySelector(".subtitulo");
 subtitulo.textContent = "Meus cliente";
-var pipipupu = document.querySelector(".titulo");
-pipipupu.textContent = "Matheus nutricao";
+var titulo = document.querySelector(".titulo");
+titulo.textContent = "Matheus nutricao";
 
 //acessar a tag TR -> paciente Paulo
 var pacientes = document.querySelectorAll(".paciente");
@@ -34,11 +34,18 @@ for (var i = 0; i < pacientes.length; i++) {
     if (peso <= 0 || peso >= 1000) {
         pesoValido = false;
         tdIMC.textContent = "Peso Inválido";
-        paciente.style.backgroundColor = "magenta";
+        paciente.classList.add("campo-invalido");
     }
     if (altura <= 0 || altura >= 3.00) {
         alturaValida = false;
         tdAltura.textContent = "Peso Inválido";
     }
 
+}
+
+//QUANDO CLICAR NO TITULO APAREÇA UMA MENSAGEM
+titulo.addEventListener('click', mostraMensagem);
+
+function mostraMensagem(){
+    alert("Saia da cadeira imediatamente Jose Mule");
 }
